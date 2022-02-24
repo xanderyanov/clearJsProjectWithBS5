@@ -1,0 +1,426 @@
+body {
+	font-size: 16px;
+}
+
+.mmxcal__area {
+	width: 220px;
+	margin: 0 auto;
+}
+
+.mmxcal {
+	display: flex;
+	flex-direction: column;
+	background: rgb(248, 248, 248);
+	width: 100%;
+	padding: 5px;
+}
+
+.mmxcal__control {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background: rgb(248, 248, 248);
+	/* border-radius: 4px; */
+	padding: 5px;
+	border: 1px solid rgb(172, 169, 169);
+}
+
+.mmxcal__control:not(:first-child) {
+	border-top: none;
+}
+
+.mmxcal__calendar {
+	display: flex;
+	flex-direction: column;
+}
+
+.mmxcal__selector {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.mmxcal__selector:last-child {
+	margin-bottom: 0;
+}
+
+.mmxcal__selector_btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 24px;
+	border-radius: 2px;
+	background: #eee;
+	cursor: pointer;
+}
+.mmxcal__selector_btn:hover {
+	background: rgb(223, 223, 223);
+}
+
+.mmxcal__selector_content {
+	display: flex;
+	justify-content: center;
+	font-size: 14px;
+}
+
+.mmxcal__month {
+	display: flex;
+	flex-direction: column;
+}
+
+.mmxcal__week {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+.mmxcal__day {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% / 7);
+	padding: 3px 0;
+	background: #eee;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.mmxcal__day.weekend {
+	background: rgb(223, 201, 201);
+}
+.mmxcal__day:hover {
+	background: rgb(223, 223, 223);
+}
+
+.mmxcal__dates {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.mmxcal__int {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% / 7);
+	padding: 3px 0;
+	background: #eee;
+	cursor: pointer;
+	font-size: 12px;
+}
+.mmxcal__int:hover {
+	background: rgb(223, 223, 223);
+}
+.mmxcal__int.active {
+	background: rgb(181, 180, 240);
+}
+
+.mmxcal__int.disabled {
+	background: rgb(248, 248, 248);
+	cursor: auto;
+	color: darkgrey;
+}
+
+.mmxcal__toggler {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mmxcal__togglerBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% / 7);
+	padding: 3px 0;
+
+	cursor: pointer;
+	font-size: 12px;
+}
+.mmxcal__togglerBtn:hover {
+	background: rgb(223, 223, 223);
+}
+
+.mmxcal__timer {
+	display: flex;
+	flex-direction: column;
+}
+
+.mmxcal__timerHeader {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 5px;
+}
+
+.mmxcal__clockOuter {
+	width: 100%;
+	padding-top: 100%;
+	position: relative;
+}
+
+.mmxcal__clock {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+}
+
+.mmxcal__clockAm {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-radius: 50%;
+	background: rgb(159, 235, 218);
+	z-index: 1;
+}
+
+.mmxcal__clockAmItem {
+	width: 30px;
+	height: 50%;
+	left: 50%;
+	margin-left: -15px;
+	display: flex;
+	justify-content: center;
+	transform-origin: bottom center;
+	transform: rotate(0deg);
+	position: absolute;
+}
+
+.mmxcal__clockAmItem span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	/* background: rgb(238, 178, 178); */
+	font-size: 16px;
+	color: #000;
+}
+.mmxcal__clockAmItem span:hover {
+	color: rgb(255, 0, 0);
+}
+
+.mmxcal__clockAmItem:nth-child(1) {
+	transform: rotate(calc(360deg / 12 * 0));
+}
+.mmxcal__clockAmItem:nth-child(1) span {
+	transform: rotate(calc(-360deg / 12 * 0));
+}
+
+.mmxcal__clockAmItem:nth-child(2) {
+	transform: rotate(calc(360deg / 12 * 1));
+}
+.mmxcal__clockAmItem:nth-child(2) span {
+	transform: rotate(calc(-360deg / 12 * 1));
+}
+
+.mmxcal__clockAmItem:nth-child(3) {
+	transform: rotate(calc(360deg / 12 * 2));
+}
+.mmxcal__clockAmItem:nth-child(3) span {
+	transform: rotate(calc(-360deg / 12 * 2));
+}
+
+.mmxcal__clockAmItem:nth-child(4) {
+	transform: rotate(calc(360deg / 12 * 3));
+}
+.mmxcal__clockAmItem:nth-child(4) span {
+	transform: rotate(calc(-360deg / 12 * 3));
+}
+
+.mmxcal__clockAmItem:nth-child(5) {
+	transform: rotate(calc(360deg / 12 * 4));
+}
+.mmxcal__clockAmItem:nth-child(5) span {
+	transform: rotate(calc(-360deg / 12 * 4));
+}
+
+.mmxcal__clockAmItem:nth-child(6) {
+	transform: rotate(calc(360deg / 12 * 5));
+}
+.mmxcal__clockAmItem:nth-child(6) span {
+	transform: rotate(calc(-360deg / 12 * 5));
+}
+
+.mmxcal__clockAmItem:nth-child(7) {
+	transform: rotate(calc(360deg / 12 * 6));
+}
+.mmxcal__clockAmItem:nth-child(7) span {
+	transform: rotate(calc(-360deg / 12 * 6));
+}
+
+.mmxcal__clockAmItem:nth-child(8) {
+	transform: rotate(calc(360deg / 12 * 7));
+}
+.mmxcal__clockAmItem:nth-child(8) span {
+	transform: rotate(calc(-360deg / 12 * 7));
+}
+
+.mmxcal__clockAmItem:nth-child(9) {
+	transform: rotate(calc(360deg / 12 * 8));
+}
+.mmxcal__clockAmItem:nth-child(9) span {
+	transform: rotate(calc(-360deg / 12 * 8));
+}
+
+.mmxcal__clockAmItem:nth-child(10) {
+	transform: rotate(calc(360deg / 12 * 9));
+}
+.mmxcal__clockAmItem:nth-child(10) span {
+	transform: rotate(calc(-360deg / 12 * 9));
+}
+
+.mmxcal__clockAmItem:nth-child(11) {
+	transform: rotate(calc(360deg / 12 * 10));
+}
+.mmxcal__clockAmItem:nth-child(11) span {
+	transform: rotate(calc(-360deg / 12 * 10));
+}
+
+.mmxcal__clockAmItem:nth-child(12) {
+	transform: rotate(calc(360deg / 12 * 11));
+}
+.mmxcal__clockAmItem:nth-child(12) span {
+	transform: rotate(calc(-360deg / 12 * 11));
+}
+
+/************************/
+.mmxcal__clockPm {
+	position: absolute;
+	top: 15%;
+	right: 15%;
+	bottom: 15%;
+	left: 15%;
+	border-radius: 50%;
+	background: rgb(175, 180, 229);
+	z-index: 2;
+}
+
+.mmxcal__minutes {
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	bottom: 0%;
+	left: 0%;
+	border-radius: 50%;
+	background: rgb(247, 94, 247);
+	z-index: 3;
+	display: none;
+}
+
+.mmxcal__clockPmItem {
+	width: 30px;
+	height: 50%;
+	left: 50%;
+	margin-left: -15px;
+	display: flex;
+	justify-content: center;
+	transform-origin: bottom center;
+	transform: rotate(0deg);
+	position: absolute;
+}
+
+.mmxcal__clockPmItem span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	/* background: rgb(238, 178, 178); */
+	font-size: 15px;
+	color: #000;
+}
+.mmxcal__clockPmItem span:hover {
+	color: rgb(255, 0, 0);
+}
+
+.mmxcal__clockPmItem:nth-child(1) {
+	transform: rotate(calc(360deg / 12 * 0));
+}
+.mmxcal__clockPmItem:nth-child(1) span {
+	transform: rotate(calc(-360deg / 12 * 0));
+}
+
+.mmxcal__clockPmItem:nth-child(2) {
+	transform: rotate(calc(360deg / 12 * 1));
+}
+.mmxcal__clockPmItem:nth-child(2) span {
+	transform: rotate(calc(-360deg / 12 * 1));
+}
+
+.mmxcal__clockPmItem:nth-child(3) {
+	transform: rotate(calc(360deg / 12 * 2));
+}
+.mmxcal__clockPmItem:nth-child(3) span {
+	transform: rotate(calc(-360deg / 12 * 2));
+}
+
+.mmxcal__clockPmItem:nth-child(4) {
+	transform: rotate(calc(360deg / 12 * 3));
+}
+.mmxcal__clockPmItem:nth-child(4) span {
+	transform: rotate(calc(-360deg / 12 * 3));
+}
+
+.mmxcal__clockPmItem:nth-child(5) {
+	transform: rotate(calc(360deg / 12 * 4));
+}
+.mmxcal__clockPmItem:nth-child(5) span {
+	transform: rotate(calc(-360deg / 12 * 4));
+}
+
+.mmxcal__clockPmItem:nth-child(6) {
+	transform: rotate(calc(360deg / 12 * 5));
+}
+.mmxcal__clockPmItem:nth-child(6) span {
+	transform: rotate(calc(-360deg / 12 * 5));
+}
+
+.mmxcal__clockPmItem:nth-child(7) {
+	transform: rotate(calc(360deg / 12 * 6));
+}
+.mmxcal__clockPmItem:nth-child(7) span {
+	transform: rotate(calc(-360deg / 12 * 6));
+}
+
+.mmxcal__clockPmItem:nth-child(8) {
+	transform: rotate(calc(360deg / 12 * 7));
+}
+.mmxcal__clockPmItem:nth-child(8) span {
+	transform: rotate(calc(-360deg / 12 * 7));
+}
+
+.mmxcal__clockPmItem:nth-child(9) {
+	transform: rotate(calc(360deg / 12 * 8));
+}
+.mmxcal__clockPmItem:nth-child(9) span {
+	transform: rotate(calc(-360deg / 12 * 8));
+}
+
+.mmxcal__clockPmItem:nth-child(10) {
+	transform: rotate(calc(360deg / 12 * 9));
+}
+.mmxcal__clockPmItem:nth-child(10) span {
+	transform: rotate(calc(-360deg / 12 * 9));
+}
+
+.mmxcal__clockPmItem:nth-child(11) {
+	transform: rotate(calc(360deg / 12 * 10));
+}
+.mmxcal__clockPmItem:nth-child(11) span {
+	transform: rotate(calc(-360deg / 12 * 10));
+}
+
+.mmxcal__clockPmItem:nth-child(12) {
+	transform: rotate(calc(360deg / 12 * 11));
+}
+.mmxcal__clockPmItem:nth-child(12) span {
+	transform: rotate(calc(-360deg / 12 * 11));
+}
+
+/************************/
